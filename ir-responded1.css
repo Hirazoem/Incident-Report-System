@@ -1,0 +1,332 @@
+.dash-content .title{
+    display: flex;
+    align-items: center;
+    margin: 35px 0 30px 0;
+}
+
+.title header {
+    position: relative;
+    font-size: 35px;
+    font-weight: 600;
+    color: #333536;
+}
+
+.title header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 10px;
+    width: 290px;
+    background-image: linear-gradient(80deg, rgb(245, 247, 250), rgb(187, 187, 224));
+}
+
+/*info fields*/
+.main-form {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.form-box {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 7px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.10);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 2px solid rgba(241, 239, 239, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+
+
+.form-box form .details {
+    margin-top: 5px;
+}
+
+ .form-box form .title1 {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 6px 0;
+    color: #232526;
+    caret-color: transparent;
+    
+}
+
+.form-box form .fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .fields .input-fields {
+    display: flex;
+    width: calc(100% / 4 - 30px);
+    flex-direction: column;
+    margin: 10px 0 5px 0;
+}
+
+.input-fields label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #414345;
+    caret-color: transparent;
+}
+
+.input-fields input {
+    outline: none;
+    font-size: 15px;
+    font-weight: 400;
+    color: #232526;
+    box-shadow: 0px 5px 10px 1px rgba(0,0,0, 0.05);
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    padding: 0 15px;
+    height: 42px;
+   margin: 20px;
+   
+}
+
+
+.input-field:focus,
+.input-field:valid{
+    border: 2px solid #232526;
+}
+
+
+.choice-btn button {
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 30px 0 0 15px;
+    background: linear-gradient(to right, #414345, #232526);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #ebebeb;
+    font-size: 18px;
+   
+}
+
+.choice-btn .cancel-btn a {
+  color: #ebebeb;
+  text-decoration: none;
+}
+
+.choice-btn .res-btn a {
+  color: #ebebeb;
+  text-decoration: none;
+}
+
+.cancel-btn:hover{
+  background: #C23B22;
+  
+}
+
+.res-btn:hover{
+background: #32A34A;
+
+}
+
+
+.input-fields #btn-img { /* # for element with id and . for class*/
+    margin-top: -40px;
+    margin-left: 250px;
+    height: 35px;
+    width: 30%;
+    bottom: 10px;
+    padding: 5px;
+    color: #ebebeb;
+    font-size: 17px;
+    background: linear-gradient(to right, #414345, #232526);
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  
+  
+   #text-img {
+    border: none;
+    outline: none;
+    background-color: #ebebeb;
+    width: 230px;
+    margin-top: -70px;
+    margin-left: 10px;
+    border-radius: 30px;
+    color: gray;
+    font-size: 15px;
+    padding: 10px 15px;
+    
+  }
+  
+  #upload-img {
+      opacity: 0;
+  }
+
+  /*pop-up message*/
+
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery .images .img {
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    margin-top: 14px;
+    margin-right: 50px;
+    border-radius: 4px;
+    width: 90px;
+  }
+  .gallery .images img {
+    width: 100%;
+    transition: transform 0.2s ease;
+  }
+  
+  .gallery .images .img:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Image lightbox styling */
+  .lightbox {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    position: fixed;
+    visibility: hidden;
+    background: rgba(0,0,0,0.65);
+    overflow: hidden;
+  }
+  .lightbox.show {
+    visibility: visible;
+  }
+  .lightbox .wrapper {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    padding: 20px;
+    max-width: 850px;
+    background-image: linear-gradient(to bottom right, rgb(245, 247, 250), rgb(187, 187, 224));
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: transform 0.1s ease;
+  }
+  .lightbox.show .wrapper {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .wrapper :where(header, .details) {
+    display: flex;
+    align-items: center;
+  }
+  .wrapper header {
+    justify-content: space-between;
+  }
+  header .details i {
+    font-size: 1.7rem;
+  }
+  header .details span {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+  header .buttons i {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    display: inline-block;
+    color: #ebebeb;
+    margin-left: 10px;
+    background:  #414345;
+    font-size: 1.25rem;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 4px;
+    transition: 0.2s ease;
+  }
+  header .buttons i:hover {
+    background: #232526;
+  }
+  .wrapper .preview-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  .preview-img .img {
+    max-height: 65vh;
+  }
+  .preview-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+
+
+/**/
+.form-group label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #414345;
+    padding: 10px;  
+}
+
+.form-group .form-control {
+    border-radius: 30px;
+    border: 0;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.btn-filter {
+    background: linear-gradient(to right, #414345, #232526);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #ebebeb;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 3px 25px;
+    margin: 0 0 0 5px;
+    cursor: pointer;
+}
+
+.btn-print {
+    display: flex;
+    position: relative;
+    background: none;
+    border: 2px solid #232526;
+    outline: none;
+    padding: 3px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 0 0 0 5px;
+}
+
+.btn-print:hover {
+    border: 2px solid #232526;
+    outline: none;
+    color: #ebebeb;
+    background: linear-gradient(to right, #414345, #232526);
+}

@@ -1,0 +1,29 @@
+
+video {
+    height: 600px;
+    margin: 50px 0 0 100px;
+}
+
+.pop-btn {
+    margin-top: 30px;
+    margin-left: 450px;
+    width: 45%;
+    height: 40px;
+    background: linear-gradient(to right, #414345, #232526);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+    text-decoration: none;
+  }
+  
+  .pop-btn:hover{
+    background: linear-gradient(to right, #232526, #000000);
+    transform: scale(1.05,1);
+  }
+  
+  .pop-btn a {
+  text-decoration: none;
+  color: #ebebeb;
+  font-size: 20px;
+  }
